@@ -2,6 +2,8 @@ import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { Base } from "styles/base";
 
 const GlobalStyle = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;700&display=swap');
+
   *, *::after, *::before {
     margin: 0;
     padding: 0;
@@ -14,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
     font-size: 1.6rem;
   }
 `;
