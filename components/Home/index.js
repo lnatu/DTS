@@ -1,9 +1,18 @@
+import Image from "next/image";
 import { FullPage } from "styles/layouts";
+import { Overlay } from "styles/components/Layouts";
 
 const View = () => {
   return (
     <FullPage>
-      <h1>Home page</h1>
+      <Overlay />
+      <Image
+        src="/static/images/home-banner-1.png"
+        layout="fill"
+        objectFit="cover"
+        quality={100}
+        alt="Banner"
+      />
     </FullPage>
   );
 };

@@ -1,0 +1,15 @@
+.link-text {
+  color: var(--color-white);
+  font-size: 2rem;
+  line-height: 2.4rem;
+  text-decoration: none;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list__item + .nav-list__item {
+  margin-left: 6rem;
+} 
