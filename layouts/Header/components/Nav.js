@@ -25,8 +25,8 @@ const View = () => {
   return (
     <nav>
       <ul className={classes["nav-list"]}>
-        {nav.map((item) => (
-          <li className={classes["nav-list__item"]}>
+        {nav.map((item, i) => (
+          <li className={classes["nav-list__item"]} key={i}>
             <Link href={item.route}>
               <a className={classes["link-text"]}>{item.title}</a>
             </Link>

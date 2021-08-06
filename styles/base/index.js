@@ -1,16 +1,49 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export const theme = {
   colors: {
-    primary: "#fafafa",
+    primary: '#fafafa',
+    grey2: '#4f4f4f',
+    grey4: '#bdbdbd',
+    warning: '#fcb500',
   },
 };
 
 export const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;700&display=swap');
 
   :root {
     --color-white: #fff;
+    --color-warning: #fcb500;
+    --color-grey-2: #4f4f4f;
+    --color-grey-4: #bdbdbd;
+  }
+
+  @font-face {
+    font-family: "Fira Sans";
+    src: url(/static/fonts/Firasans-Bold.ttf) format("truetype");
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Fira Sans";
+    src: url(/static/fonts/Firasans-Medium.ttf) format("truetype");
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Fira Sans";
+    src: url(/static/fonts/Firasans-Regular.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Fira Sans";
+    src: url(/static/fonts/Firasans-Light.ttf) format("truetype");
+    font-weight: 300;
+    font-style: normal;
   }
 
   *, *::after, *::before {
