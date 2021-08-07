@@ -1,5 +1,6 @@
-import { ThemeProvider } from "styled-components";
-import { GlobalStyle, theme } from "styles/base";
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyle, theme } from 'styles/base';
+import 'styles/modules/grid.min.css';
 
 function MyApp({ Component, pageProps }) {
   return (

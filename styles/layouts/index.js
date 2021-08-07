@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Header = styled.header`
   position: fixed;
@@ -12,6 +12,7 @@ export const Header = styled.header`
 `;
 
 export const FullPage = styled.section((props) => ({
-  height: "100vh",
-  width: "100%",
+  height: '100vh',
+  width: '100%',
+  position: 'relative',
 }));

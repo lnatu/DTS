@@ -1,5 +1,12 @@
 import styled from 'styled-components';
 
+export const Container = styled.div`
+  max-width: 117rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
 export const Overlay = styled.div`
   background-image: linear-gradient(
     0deg,
@@ -19,7 +26,21 @@ export const Overlay = styled.div`
 `;
 
 export const Flex = styled.div(
-  ({ direction, wrap, items, content, width, height }) => ({
+  ({
+    direction,
+    wrap,
+    items,
+    content,
+    width,
+    height,
+    margin,
+    marginTop,
+    marginRight,
+    marginBottom,
+    marginLeft,
+    marginX,
+    marginY,
+  }) => ({
     display: 'flex',
     flexDirection: direction,
     flexWrap: wrap || 'wrap',
@@ -28,6 +49,14 @@ export const Flex = styled.div(
 
     height: height,
     width: width,
+
+    margin: margin,
+    marginTop: marginTop,
+    marginRight: marginRight,
+    marginBottom: marginBottom,
+    marginLeft: marginLeft,
+    margin: marginX ? `0 ${marginX}` : null,
+    margin: marginY ? `${marginY} 0` : null,
   })
 );
 
@@ -37,12 +66,15 @@ export const BlockText = styled.div(({ color, align }) => ({
 }));
 
 export const Stack = styled.div(
-  ({ position, top, right, bottom, left, zIndex }) => ({
+  ({ position, top, right, bottom, left, level, width, height }) => ({
     position: position,
     top: top,
     right: right,
     bottom: bottom,
     left: left,
-    zIndex: zIndex,
+    zIndex: level,
+
+    width: width,
+    height: height,
   })
 );
