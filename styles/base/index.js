@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 export const theme = {
   colors: {
-    primary: '#fafafa',
+    dark: '#0C0C0C',
     grey2: '#4f4f4f',
     grey3: '#828282',
     grey4: '#bdbdbd',
@@ -17,6 +17,13 @@ export const GlobalStyle = createGlobalStyle`
     --color-warning: #fcb500;
     --color-grey-2: #4f4f4f;
     --color-grey-4: #bdbdbd;
+  }
+
+  @font-face {
+    font-family: "Fira Sans";
+    src: url(/static/fonts/Firasans-ExtraBold.ttf) format("truetype");
+    font-weight: 900;
+    font-style: normal;
   }
 
   @font-face {

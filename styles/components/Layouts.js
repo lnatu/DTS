@@ -1,11 +1,13 @@
 import styled from 'styled-components';
+import { setMargins } from './common';
 
-export const Container = styled.div`
-  max-width: 117rem;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-`;
+export const Container = styled.div(({ maxWidth, height }) => ({
+  maxWidth: maxWidth,
+  width: '100%',
+  height: height,
+  marginLeft: 'auto',
+  marginRight: 'auto',
+}));
 
 export const Overlay = styled.div`
   background-image: linear-gradient(
@@ -26,21 +28,8 @@ export const Overlay = styled.div`
 `;
 
 export const Flex = styled.div(
-  ({
-    direction,
-    wrap,
-    items,
-    content,
-    width,
-    height,
-    margin,
-    marginTop,
-    marginRight,
-    marginBottom,
-    marginLeft,
-    marginX,
-    marginY,
-  }) => ({
+  setMargins,
+  ({ direction, wrap, items, content, width, height }) => ({
     display: 'flex',
     flexDirection: direction,
     flexWrap: wrap || 'wrap',
@@ -49,25 +38,33 @@ export const Flex = styled.div(
 
     height: height,
     width: width,
-
-    margin: margin,
-    marginTop: marginTop,
-    marginRight: marginRight,
-    marginBottom: marginBottom,
-    marginLeft: marginLeft,
-    margin: marginX ? `0 ${marginX}` : null,
-    margin: marginY ? `${marginY} 0` : null,
   })
 );
 
-export const BlockText = styled.div(({ color, align }) => ({
+export const BlockText = styled.div(({ color, align, maxWidth }) => ({
   color: color,
   textAlign: align,
+  maxWidth: maxWidth,
+  width: '100%',
+  margin: 'auto',
 }));
 
 export const Stack = styled.div(
-  ({ position, top, right, bottom, left, level, width, height }) => ({
-    position: position,
+  ({
+    bgColor,
+    position,
+    top,
+    right,
+    bottom,
+    left,
+    level,
+    width,
+    height,
+    theme,
+  }) => ({
+    backgroundColor: theme.colors[bgColor] || bgColor,
+
+    position: position || 'absolute',
     top: top,
     right: right,
     bottom: bottom,
@@ -78,3 +75,10 @@ export const Stack = styled.div(
     height: height,
   })
 );
+
+export const StyledImage = styled.img(({ width, height }) => ({
+  maxWidth: '100%',
+  width: width,
+  height: height || 'auto',
+  objectFit: 'cover',
+}));
