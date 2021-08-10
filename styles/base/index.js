@@ -6,6 +6,7 @@ export const theme = {
     grey2: '#4f4f4f',
     grey3: '#828282',
     grey4: '#bdbdbd',
+    grey5: '#e1e1e1',
     warning: '#fcb500',
   },
 };

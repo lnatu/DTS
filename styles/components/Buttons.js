@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Button = styled.div(
-  ({ bgColor, color, fontSize, fontWeight, rounded, theme }) => ({
+  ({ bgColor, color, fontSize, fontWeight, rounded, minw, theme }) => ({
     backgroundColor: theme.colors[bgColor] || bgColor,
     border: 'none',
     borderRadius: rounded,
@@ -16,6 +16,8 @@ export const Button = styled.div(
     textDecoration: 'none',
 
     padding: '1.6rem 4.6rem',
+    minHeight: '5rem',
+    minWidth: minw,
 
     verticalAlign: 'middle',
     transition:

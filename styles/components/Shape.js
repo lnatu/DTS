@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { setMargins } from './common/index';
 
 export const Line = styled.div(({ bgColor, theme }) => ({
   backgroundColor: theme.colors[bgColor] || bgColor,
@@ -28,6 +29,7 @@ export const Line = styled.div(({ bgColor, theme }) => ({
 }));
 
 export const Box = styled.div(
+  setMargins,
   ({ bgColor, padding, rounded, width, height, theme, other }) => ({
     backgroundColor: theme.colors[bgColor] || bgColor,
     borderRadius: rounded,
