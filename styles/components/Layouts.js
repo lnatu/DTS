@@ -29,7 +29,8 @@ export const Overlay = styled.div`
 
 export const Flex = styled.div(
   setMargins,
-  ({ direction, wrap, items, content, width, height }) => ({
+  ({ bgColor, direction, wrap, items, content, width, height, theme }) => ({
+    backgroundColor: theme.colors[bgColor] || bgColor,
     display: 'flex',
     flexDirection: direction,
     flexWrap: wrap || 'wrap',

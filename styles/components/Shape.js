@@ -39,3 +39,19 @@ export const Box = styled.div(
     ...other,
   })
 );
+
+export const CursorOutline = styled.div`
+  z-index: 999;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
+
+  width: 5rem;
+  height: 5rem;
+  border: 2px solid #fff;
+`;
