@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { setMargins } from './common';
 
-export const Container = styled.div(({ maxWidth, height }) => ({
+export const Container = styled.div(setMargins, ({ maxWidth, height }) => ({
   maxWidth: maxWidth,
   width: '100%',
   height: height,
@@ -61,6 +61,7 @@ export const Stack = styled.div(
     level,
     width,
     height,
+    padding,
     theme,
   }) => ({
     backgroundColor: theme.colors[bgColor] || bgColor,
@@ -74,6 +75,8 @@ export const Stack = styled.div(
 
     width: width,
     height: height,
+
+    padding: padding,
   })
 );
 

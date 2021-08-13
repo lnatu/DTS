@@ -51,6 +51,7 @@ const Cursor = () => {
    */
   useEffect(() => {
     document.addEventListener('mousemove', onMouseMove);
+    // document.addEventListener('wheel', onMouseMove);
     document.addEventListener('mouseenter', onMouseEnter);
     document.addEventListener('mouseleave', onMouseLeave);
     document.addEventListener('mousedown', onMouseDown);
@@ -63,6 +64,7 @@ const Cursor = () => {
 
     return () => {
       document.removeEventListener('mousemove', onMouseMove);
+      // document.removeEventListener('wheel', onMouseMove);
       document.removeEventListener('mouseenter', onMouseEnter);
       document.removeEventListener('mouseleave', onMouseLeave);
       document.removeEventListener('mousedown', onMouseDown);
@@ -111,7 +113,7 @@ const Cursor = () => {
     if (cursorEnlarged.current) {
       // cursorDot.current.style.transform = 'translate(-50%, -50%) scale(0.5)';
       cursorDotOutline.current.style.transform =
-        'translate(-50%, -50%) scale(1.5)';
+        'translate(-50%, -50%) scale(2)';
     } else {
       // cursorDot.current.style.transform = 'translate(-50%, -50%) scale(1)';
       cursorDotOutline.current.style.transform =
@@ -144,8 +146,8 @@ const Cursor = () => {
    */
   const animateDotOutline = (time) => {
     if (previousTimeRef.current !== undefined) {
-      x += (endX - x) / 8;
-      y += (endY - y) / 8;
+      x += (endX - x) / 16;
+      y += (endY - y) / 16;
       cursorDotOutline.current.style.top = y + 'px';
       cursorDotOutline.current.style.left = x + 'px';
     }
