@@ -11,8 +11,9 @@ export const Header = styled.header`
   width: 100%;
 `;
 
-export const FullPage = styled.section((props) => ({
-  height: '100vh',
+export const FullPage = styled.section(({ height, minHeight }) => ({
+  height: height || '100vh',
+  minHeight: minHeight,
   width: '100%',
   position: 'relative',
 }));

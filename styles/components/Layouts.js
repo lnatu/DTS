@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { setMargins } from './common';
 
-export const Container = styled.div(({ maxWidth, height }) => ({
+export const Container = styled.div(setMargins, ({ maxWidth, height }) => ({
   maxWidth: maxWidth,
   width: '100%',
   height: height,
@@ -29,7 +29,8 @@ export const Overlay = styled.div`
 
 export const Flex = styled.div(
   setMargins,
-  ({ direction, wrap, items, content, width, height }) => ({
+  ({ bgColor, direction, wrap, items, content, width, height, theme }) => ({
+    backgroundColor: theme.colors[bgColor] || bgColor,
     display: 'flex',
     flexDirection: direction,
     flexWrap: wrap || 'wrap',
@@ -60,6 +61,7 @@ export const Stack = styled.div(
     level,
     width,
     height,
+    padding,
     theme,
   }) => ({
     backgroundColor: theme.colors[bgColor] || bgColor,
@@ -73,6 +75,8 @@ export const Stack = styled.div(
 
     width: width,
     height: height,
+
+    padding: padding,
   })
 );
 
