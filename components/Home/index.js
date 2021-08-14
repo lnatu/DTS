@@ -14,7 +14,7 @@ const View = () => {
 
       <Screen4 />
 
-      {/* <Screen5 /> */}
+      <Screen5 />
 
       <Screen8 />
 
