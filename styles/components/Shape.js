@@ -30,8 +30,9 @@ export const Line = styled.div(({ bgColor, theme }) => ({
 
 export const Box = styled.div(
   setMargins,
-  ({ bgColor, padding, rounded, width, height, theme, other }) => ({
+  ({ bgColor, border, padding, rounded, width, height, theme, other }) => ({
     backgroundColor: theme.colors[bgColor] || bgColor,
+    border: border,
     borderRadius: rounded,
     padding: padding,
     width: width,

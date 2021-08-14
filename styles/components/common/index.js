@@ -6,6 +6,7 @@ export const setMargins = ({
   marginLeft,
   marginX,
   marginY,
+  padding,
 }) => ({
   margin: margin,
   marginTop: marginTop,
@@ -14,4 +15,5 @@ export const setMargins = ({
   marginLeft: marginLeft,
   margin: marginX ? `0 ${marginX}` : null,
   margin: marginY ? `${marginY} 0` : null,
+  padding: padding,
 });

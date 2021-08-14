@@ -11,9 +11,10 @@ export const Header = styled.header`
   width: 100%;
 `;
 
-export const FullPage = styled.section(({ height, minHeight }) => ({
+export const FullPage = styled.section(({ height, minHeight, padding }) => ({
   height: height || '100vh',
   minHeight: minHeight,
   width: '100%',
   position: 'relative',
+  padding: padding,
 }));

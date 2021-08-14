@@ -8,6 +8,7 @@ export const theme = {
     grey3: '#828282',
     grey4: '#bdbdbd',
     grey5: '#e1e1e1',
+    grey6: '#e0e0e0',
     warning: '#fcb500',
   },
 };
@@ -19,6 +20,7 @@ export const GlobalStyle = createGlobalStyle`
     --color-warning: #fcb500;
     --color-grey-2: #4f4f4f;
     --color-grey-4: #bdbdbd;
+    --color-grey-6: #e0e0e0;
   }
 
   @font-face {
@@ -171,6 +173,10 @@ export const GlobalStyle = createGlobalStyle`
 
   a:focus {
     outline: thin dotted;
+  }
+
+  a {
+    text-decoration: none;
   }
 
   a:active,
