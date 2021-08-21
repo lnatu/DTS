@@ -7,6 +7,21 @@ export const Container = styled.div(setMargins, ({ maxWidth, height }) => ({
   height: height,
   marginLeft: 'auto',
   marginRight: 'auto',
+
+  paddingLeft: '1rem',
+  paddingRight: '1rem',
+
+  '@media (min-width: 576px)': {
+    maxWidth: '540px',
+  },
+
+  '@media (min-width: 768px)': {
+    maxWidth: '720px',
+  },
+
+  '@media (min-width: 992px)': {
+    maxWidth: maxWidth,
+  },
 }));
 
 export const Overlay = styled.div`
@@ -51,6 +66,8 @@ export const Flex = styled.div(
 
     height: height,
     width: width,
+
+    position: 'relative',
   })
 );
 
@@ -65,6 +82,8 @@ export const BlockText = styled.div(({ color, align, maxWidth }) => ({
 export const Stack = styled.div(
   ({
     bgColor,
+    border,
+    rounded,
     position,
     top,
     right,
@@ -72,11 +91,14 @@ export const Stack = styled.div(
     left,
     level,
     width,
+    maxWidth,
     height,
     padding,
     theme,
   }) => ({
     backgroundColor: theme.colors[bgColor] || bgColor,
+    border: border,
+    borderRadius: rounded,
 
     position: position || 'absolute',
     top: top,
@@ -86,9 +108,12 @@ export const Stack = styled.div(
     zIndex: level,
 
     width: width,
+    maxWidth: maxWidth,
     height: height,
 
     padding: padding,
+
+    wordBreak: 'break-all',
   })
 );
 

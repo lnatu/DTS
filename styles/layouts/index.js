@@ -11,10 +11,16 @@ export const Header = styled.header`
   width: 100%;
 `;
 
-export const FullPage = styled.section(({ height, minHeight, padding }) => ({
-  height: height || '100vh',
-  minHeight: minHeight,
-  width: '100%',
-  position: 'relative',
-  padding: padding,
-}));
+export const FullPage = styled.section(
+  ({ bgImage, height, minHeight, padding }) => ({
+    backgroundImage: bgImage,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    height: height || '100vh',
+    minHeight: minHeight,
+    width: '100%',
+    position: 'relative',
+    padding: padding,
+    overflow: 'hidden',
+  })
+);

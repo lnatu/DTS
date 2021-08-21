@@ -4,6 +4,7 @@ export const theme = {
   colors: {
     dark: '#0C0C0C',
     dark2: '#0e0e0e',
+    dark3: '#222222',
     grey2: '#4f4f4f',
     grey3: '#828282',
     grey4: '#bdbdbd',
@@ -71,6 +72,7 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
   }
 
   html, body, div, span, applet, object, iframe,
@@ -290,13 +292,15 @@ export const GlobalStyle = createGlobalStyle`
 
 
   ::-moz-selection {
-    background: #b3d4fc;
+    background: var(--color-warning);
     text-shadow: none;
+    color: #000000;
   }
 
   ::selection {
-    background: #b3d4fc;
+    background: var(--color-warning);
     text-shadow: none;
+    color: #000000;
   }
 
   img {
@@ -311,5 +315,31 @@ export const GlobalStyle = createGlobalStyle`
 
   textarea {
     resize: vertical;
+  }
+
+  .swiper-pagination {
+    position: static;
+    order: 2;
+    margin-top: 4rem;
+  }
+
+  .swiper-pagination-bullet {
+    height: 3px;
+    width: 12px;
+    background-color: #828282;
+    border-radius: 5px;
+    display: inline-block;
+    opacity: 1;
+
+    transition: all .3s;
+  }
+
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    width: 40px;
+    background-color: #F5DC4B;
+  }
+
+  .swiper-button-prev, .swiper-button-next {
+    display: none;
   }
 `;

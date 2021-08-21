@@ -14,23 +14,48 @@ import StepCard from 'components/Home/components/ClientCard';
 import classes from 'components/Home/styles/Home.module.css';
 
 const View = () => (
-  <FullPage height="auto">
-    {/* <StyledImage
-      src="/static/images/home-banner-7.png"
-      width="100%"
-      height="100%"
-    /> */}
-
+  <FullPage
+    bgImage="linear-gradient(to bottom, rgba(0, 0, 0, .9), rgba(0, 0, 0, .9)), url(/static/images/home-banner-7.png)"
+    minHeight="100vh"
+    height="auto"
+  >
     <Flex
-      bgImage="linear-gradient(to bottom, rgba(0, 0, 0, .9), rgba(0, 0, 0, .9)), url(/static/images/home-banner-7.png)"
-      width="100%"
+      width="calc(100% - 29rem)"
       height="100%"
       items="center"
-      content="center"
-      padding="8rem 0"
+      padding="8rem"
+      marginLeft="auto"
     >
       <Box>
-        <StyledImage src="/static/images/home-banner-7-1.png" />
+        <Box other={{ position: 'relative' }}>
+          <StyledImage src="/static/images/home-banner-7-1.png" />
+
+          <Stack
+            className={classes['dts-client-stack']}
+            bottom={20}
+            right={-85}
+            level="3"
+          >
+            <Typo
+              as="p"
+              color="#fff"
+              fontSize="1.8rem"
+              fontWeight={700}
+              lineHeight="2.16rem"
+              letterSpacing="0.45em"
+            >
+              Digital{' '}
+              <Typo as="span" color="warning">
+                Transformation
+              </Typo>{' '}
+              Strategy{' '}
+              <Typo as="span" color="warning">
+                - My
+              </Typo>{' '}
+              Client
+            </Typo>
+          </Stack>
+        </Box>
 
         <Flex
           content="center"
@@ -47,16 +72,6 @@ const View = () => (
         </Flex>
       </Box>
     </Flex>
-
-    {/* <Stack
-      bgColor="rgba(51, 51, 51, 0.5)"
-      position="absolute"
-      bottom={0}
-      left={0}
-      width="100%"
-      height="6.8rem"
-      level={2}
-    /> */}
 
     <Stack
       bgColor="warning"
