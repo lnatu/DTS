@@ -14,6 +14,16 @@
   background-color: var(--color-grey-6);
 }
 
+@media only screen and (max-width: 62em) {
+  .process-card-outter +  .process-card-outter {
+    margin-top: 15rem;
+  }
+  
+  .process-card::after {
+    display: none;
+  }
+}
+
 .process-card-outter.active + .process-card-outter.active .process-card::after {
   background-color: var(--color-warning);
 }
@@ -82,17 +92,17 @@
 }
 
 .text-reverse {
-  transform: rotate(-90deg);
+  transform: rotate(-90deg) translateX(-0px); 
   transform-origin: 0 0;
 }
 
 .slide-preview-small {
-  margin: 0 -2.5rem;
+  margin: -2.5rem;
 }
 
 .slide-preview-small .slide-preview-item {
   cursor: pointer;
-  padding: 0 2.5rem; 
+  padding: 2.5rem; 
   transition: transform .3s;
 }
 
@@ -101,9 +111,9 @@
 }
 
 .dts-client-stack {
-  transition: all .2s;
-  transform-origin: 100% 0;
-  transform: rotate(90deg)
+  /* transition: all .2s; */
+  transform-origin: 100% 100%;
+  transform: rotate(90deg);
   /* transform: rotateZ(190deg) */
 }
 
@@ -140,4 +150,100 @@
   z-index: 4;
 
   transform: translateY(calc(-50% - 20px));
+}
+
+.feedback-client {
+  flex: 0 0 20%;
+}
+
+.team-quote {
+  padding: 4.5rem;
+  width: 100%;
+}
+
+.team-quote--1 {
+  top: 52%;
+  right: 14%;
+}
+
+.team-next {
+  top: 50%;
+  right: 10rem;
+}
+
+.vision-slide-item {
+  align-items: center;
+}
+
+@media only screen and (max-width: 62em) {
+  .feedback-client {
+    flex: 0 0 50%;
+  }
+
+  .team-quote {
+    padding: 1rem;
+    width: 60%;
+  }
+
+  .team-quote--1 {
+    right: auto;
+    top: auto;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .team-next {
+    top: auto;
+    bottom: 20%;
+    right: 5%;
+  }
+
+  .team-next img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .vision-slide-item {
+    flex-direction: column;
+  }
+
+  .vision-slide-item-content {
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .3);
+    margin-left: 0!important;
+    padding: 1.5rem;
+  }
+}
+
+.side-text {
+  width: calc(100% - 29rem);
+}
+
+.side-text-stack {
+  width: 29rem;
+}
+
+@media only screen and (max-width: 75em) {
+  .side-text {
+    width: calc(100% - 10rem);
+  }
+  
+  .side-text-stack {
+    width: 10rem;
+  }
+
+  .slide-preview-small {
+    margin: -1rem;
+  }
+  
+  .slide-preview-small .slide-preview-item {
+    cursor: pointer;
+    padding: 1rem; 
+    transition: transform .3s;
+  }
 }

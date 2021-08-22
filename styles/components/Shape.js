@@ -26,6 +26,10 @@ export const Line = styled.div(({ bgColor, theme }) => ({
     top: '50%',
     transform: 'translate(-50%, -50%)',
   },
+
+  '@media only screen and (max-width: 36em)': {
+    maxWidth: '20rem',
+  },
 }));
 
 export const Box = styled.div(

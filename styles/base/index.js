@@ -342,4 +342,39 @@ export const GlobalStyle = createGlobalStyle`
   .swiper-button-prev, .swiper-button-next {
     display: none;
   }
+
+  .vision-slide {
+    height: 360px;
+    padding-left: 20px;
+  } 
+
+  @media only screen and (max-width: 25.875em) {
+    .vision-slide {
+      height: 240px;
+    } 
+  }
+
+  @media only screen and (max-width: 23.4375em) {
+    .vision-slide {
+      height: 177px;
+    } 
+  }
+
+  .vision-slide .swiper-pagination {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 0;
+  }
+
+  .vision-slide .swiper-pagination .swiper-pagination-bullet {
+    width: 3px;
+    height: 12px;
+  }
+
+  .vision-slide .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    width: 3px;
+    height: 40px;
+  }
 `;

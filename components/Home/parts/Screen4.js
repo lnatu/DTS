@@ -8,11 +8,12 @@ import {
 } from 'styles/components/Layouts';
 import { Typo } from 'styles/components/Typo';
 import { Box } from 'styles/components/Shape';
+import PageIdent from 'components/Home/components/PageIndent';
 
 const View = () => (
-  <FullPage>
-    <Flex className="row g-0" height="100%">
-      <Box className="col-4" height="100%" other={{ position: 'relative' }}>
+  <FullPage height="auto">
+    <Flex className="row g-0">
+      <Box className="col-lg-4" height="100vh" other={{ position: 'relative' }}>
         <StyledImage
           width="100%"
           height="100%"
@@ -27,7 +28,13 @@ const View = () => (
           level={2}
         />
         <Stack top={0} left={0} width="100%" height="100%" level={3}>
-          <Flex items="center" content="center" width="100%" height="100%">
+          <Flex
+            items="center"
+            content="center"
+            width="100%"
+            height="100%"
+            padding="0 2rem"
+          >
             <BlockText align="center" color="#fff" maxWidth={370}>
               <Typo as="h3" fontWeight={900} fontSize="9.6rem">
                 12
@@ -54,7 +61,7 @@ const View = () => (
           </Flex>
         </Stack>
       </Box>
-      <Box className="col-4" height="100%" other={{ position: 'relative' }}>
+      <Box className="col-lg-4" height="100vh" other={{ position: 'relative' }}>
         <StyledImage
           width="100%"
           height="100%"
@@ -69,7 +76,13 @@ const View = () => (
           level={2}
         />
         <Stack top={0} left={0} width="100%" height="100%" level={3}>
-          <Flex items="center" content="center" width="100%" height="100%">
+          <Flex
+            items="center"
+            content="center"
+            width="100%"
+            height="100%"
+            padding="0 2rem"
+          >
             <BlockText align="center" color="#fff" maxWidth={370}>
               <Typo as="h3" fontWeight={900} fontSize="9.6rem">
                 5
@@ -96,7 +109,7 @@ const View = () => (
           </Flex>
         </Stack>
       </Box>
-      <Box className="col-4" height="100%" other={{ position: 'relative' }}>
+      <Box className="col-lg-4" height="100vh" other={{ position: 'relative' }}>
         <StyledImage
           width="100%"
           height="100%"
@@ -111,7 +124,13 @@ const View = () => (
           level={2}
         />
         <Stack top={0} left={0} width="100%" height="100%" level={3}>
-          <Flex items="center" content="center" width="100%" height="100%">
+          <Flex
+            items="center"
+            content="center"
+            width="100%"
+            height="100%"
+            padding="0 2rem"
+          >
             <BlockText align="center" color="#fff" maxWidth={370}>
               <Typo as="h3" fontWeight={900} fontSize="9.6rem">
                 99+
@@ -140,28 +159,10 @@ const View = () => (
       </Box>
     </Flex>
 
-    <Stack position="absolute" bottom={30} left={45} level={3}>
-      <Flex items="baseline">
-        <Typo
-          as="h3"
-          fontSize="9.6rem"
-          lineHeight="11.5rem"
-          fontWeight={700}
-          color="#fff"
-        >
-          04
-        </Typo>
-        <Typo
-          as="p"
-          fontSize="1.8rem"
-          lineHeight="2.16rem"
-          color="#fff"
-          marginLeft={5}
-        >
-          Highlight các con số về Khách hàng , Dự án, Đối tác
-        </Typo>
-      </Flex>
-    </Stack>
+    <PageIdent
+      order="04"
+      text="Highlight các con số về Khách hàng , Dự án, Đối tác"
+    />
   </FullPage>
 );
 

@@ -1,24 +1,27 @@
 import Link from 'next/link';
 import { FullPage } from 'styles/layouts';
-import { Container, Flex, Stack, StyledImage } from 'styles/components/Layouts';
+import { Container, Flex, StyledImage } from 'styles/components/Layouts';
 import { Typo } from 'styles/components/Typo';
 import { Box, Line } from 'styles/components/Shape';
+import PageIdent from 'components/Home/components/PageIndent';
 import classes from 'components/Home/styles/Home.module.css';
 
 const View = () => (
-  <FullPage>
+  <FullPage heightLG="auto">
     <Flex
       bgImage="url(/static/images/home-banner-6.png)"
       width="100%"
       height="100%"
       content="center"
       items="center"
+      padding="20rem 2rem"
     >
       <Box width="100%">
         <Typo
           as="p"
           align="center"
           fontSize="1.4rem"
+          fontSizeSM="1rem"
           lineHeight="1.68rem"
           marginTop="5rem"
           marginBottom="1rem"
@@ -40,11 +43,11 @@ const View = () => (
             <Box
               className={
                 i > 2
-                  ? classes['process-card-outter'] + ' col-2'
+                  ? classes['process-card-outter'] + ' col-md-12 col-lg-2'
                   : classes['process-card-outter'] +
                     ' ' +
                     classes['active'] +
-                    ' col-2'
+                    ' col-md-12 col-lg-2'
               }
             >
               <Box className={classes['process-card']} key={i}>
@@ -102,28 +105,7 @@ const View = () => (
       </Box>
     </Flex>
 
-    <Stack position="absolute" bottom={30} left={45} level={3}>
-      <Flex items="baseline">
-        <Typo
-          as="h3"
-          fontSize="9.6rem"
-          lineHeight="11.5rem"
-          fontWeight={700}
-          color="#fff"
-        >
-          06
-        </Typo>
-        <Typo
-          as="p"
-          fontSize="1.8rem"
-          lineHeight="2.16rem"
-          color="#fff"
-          marginLeft={5}
-        >
-          How we work with you
-        </Typo>
-      </Flex>
-    </Stack>
+    <PageIdent order="06" text="How we work with you" />
   </FullPage>
 );
 

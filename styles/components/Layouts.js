@@ -8,8 +8,8 @@ export const Container = styled.div(setMargins, ({ maxWidth, height }) => ({
   marginLeft: 'auto',
   marginRight: 'auto',
 
-  paddingLeft: '1rem',
-  paddingRight: '1rem',
+  paddingLeft: '1.5rem',
+  paddingRight: '1.5rem',
 
   '@media (min-width: 576px)': {
     maxWidth: '540px',
@@ -53,6 +53,8 @@ export const Flex = styled.div(
     content,
     width,
     height,
+    overflow,
+    heightLG,
     theme,
   }) => ({
     backgroundColor: theme.colors[bgColor] || bgColor,
@@ -68,6 +70,11 @@ export const Flex = styled.div(
     width: width,
 
     position: 'relative',
+    overflow: overflow,
+
+    '@media only screen and (max-width: 62em)': {
+      height: heightLG,
+    },
   })
 );
 
@@ -89,6 +96,10 @@ export const Stack = styled.div(
     right,
     bottom,
     left,
+    topSM,
+    rightSM,
+    bottomSM,
+    leftSM,
     level,
     width,
     maxWidth,
@@ -105,6 +116,7 @@ export const Stack = styled.div(
     right: right,
     bottom: bottom,
     left: left,
+
     zIndex: level,
 
     width: width,
@@ -114,6 +126,13 @@ export const Stack = styled.div(
     padding: padding,
 
     wordBreak: 'break-all',
+
+    '@media only screen and (max-width: 36em)': {
+      top: topSM,
+      right: rightSM,
+      bottom: bottomSM,
+      left: leftSM,
+    },
   })
 );
 
