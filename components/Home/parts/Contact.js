@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { FullPage } from 'styles/layouts';
 import { Flex, Stack, StyledImage } from 'styles/components/Layouts';
@@ -8,10 +9,15 @@ import { Box } from 'styles/components/Shape';
 
 const View = () => {
   const isLg = useMediaQuery({ query: '(min-width: 992px)' });
+  const [screen, setScreen] = useState(false);
+
+  useEffect(() => {
+    setScreen(isLg);
+  }, [isLg]);
 
   return (
     <FullPage height="auto">
-      <Flex className="row g-0" height={isLg ? '100vh' : 'auto'}>
+      <Flex className="row g-0" height={screen ? '100vh' : 'auto'}>
         <Box
           className="col-lg-6"
           height="100%"
@@ -20,7 +26,7 @@ const View = () => {
             backgroundImage:
               'radial-gradient(66.44% 66.44% at 25.29% 0%, #414141 12.47%, #1C1C1C 100%)',
           }}
-          padding={isLg ? '0' : '20rem 0 10rem 0'}
+          padding={screen ? '0' : '10rem 0 10rem 0'}
         >
           <Flex width="100%" height="100%" items="center" justify="center">
             <Box padding="0 8rem" paddingSM="0 2rem">
@@ -237,7 +243,7 @@ const View = () => {
           </Flex>
         </Box>
 
-        {isLg && (
+        {screen ? (
           <Box
             className="col-lg-6"
             height="100%"
@@ -258,7 +264,7 @@ const View = () => {
               level={2}
             />
           </Box>
-        )}
+        ) : null}
       </Flex>
     </FullPage>
   );

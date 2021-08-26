@@ -24,19 +24,27 @@ const View = ({ menuActive }) => {
 
   return (
     <nav
-      className={menuActive ? classes.nav + ' ' + classes.active : classes.nav}
+      className={
+        menuActive
+          ? classes.nav + ' overflow-hidden ' + classes.active
+          : classes.nav + ' overflow-hidden '
+      }
     >
       <ul className={classes['nav-list']}>
         {nav.map((item, i) => (
-          <li className={classes['nav-list__item']} key={i}>
+          <li className={classes['nav-list__item'] + ' slide-up-skew'} key={i}>
             <Link href={item.route}>
-              <a className={classes['link-text']}>{item.title}</a>
+              <a className={classes['link-text']} data-text={item.title}>
+                {item.title}
+              </a>
             </Link>
           </li>
         ))}
         <li
           className={
-            classes['nav-list__item'] + ' ' + classes['nav-list__item--flag']
+            classes['nav-list__item'] +
+            ' slide-up-skew ' +
+            classes['nav-list__item--flag']
           }
         >
           <Image

@@ -6,15 +6,9 @@ import SwiperCore, { Autoplay, Pagination, Navigation } from 'swiper/core';
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 import { FullPage } from 'styles/layouts';
-import {
-  BlockText,
-  Container,
-  Flex,
-  Stack,
-  StyledImage,
-} from 'styles/components/Layouts';
+import { Container, Flex, StyledImage } from 'styles/components/Layouts';
 import { Typo } from 'styles/components/Typo';
-import { Box, Line } from 'styles/components/Shape';
+import { Box } from 'styles/components/Shape';
 import classes from 'components/Home/styles/Home.module.css';
 import PageIdent from 'components/Home/components/PageIndent';
 
@@ -24,7 +18,7 @@ const View = () => {
   };
 
   return (
-    <FullPage>
+    <FullPage className="screen">
       <Flex
         bgColor="dark2"
         items="center"

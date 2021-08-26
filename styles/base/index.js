@@ -377,4 +377,9 @@ export const GlobalStyle = createGlobalStyle`
     width: 3px;
     height: 40px;
   }
+
+  // GSAP
+  .overflow-hidden {
+    overflow: hidden;
+  }
 `;
