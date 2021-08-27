@@ -16,8 +16,10 @@ import Screen10 from 'components/Home/parts/Screen10';
 
 const View = () => {
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
     const tl = gsap.timeline();
     const tl2 = gsap.timeline();
+    const tl3 = gsap.timeline();
 
     tl.from('.slide-up-fade', {
       duration: 2,
@@ -41,6 +43,64 @@ const View = () => {
       ease: 'power4.out',
       stagger: {
         amount: 5,
+      },
+    });
+
+    let stl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.test',
+        scrub: 1,
+        start: 'top bottom',
+        end: 'bottom top',
+      },
+    });
+
+    stl.to('.vision-slide', {
+      x: 400,
+      ease: 'power4.in',
+      duration: 1,
+    });
+
+    gsap.from('.vision-slide', {
+      scrollTrigger: {
+        trigger: '.test',
+        markers: true,
+      },
+      y: '150%',
+      ease: 'power4.out',
+      duration: 2,
+      delay: 0.5,
+    });
+
+    // Screen 3
+    let ts = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.tech-stacks',
+        start: 'top bottom',
+        end: 'bottom top',
+      },
+    });
+    let ts2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.tech-stacks',
+        start: 'top bottom',
+        end: 'bottom top',
+      },
+    });
+    ts2.from('.screen-title', {
+      duration: 2,
+      y: 200,
+      skewY: 20,
+      ease: 'power4.out',
+    });
+    ts.from('.tech-stack', {
+      duration: 2,
+      scale: 0.8,
+      y: '100%',
+      opacity: 0,
+      ease: 'power4.out',
+      stagger: {
+        amount: 0.3,
       },
     });
   }, []);

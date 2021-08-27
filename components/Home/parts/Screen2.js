@@ -20,13 +20,14 @@ const View = () => {
   return (
     <FullPage className="screen">
       <Flex
+        className="test"
         bgColor="dark2"
         items="center"
         content="center"
         width="100%"
         height="100%"
       >
-        <Container maxWidth={1147} height={510}>
+        <Container className="overflow-hidden" maxWidth={1147} height={510}>
           <Flex items="center" height="100%">
             <Swiper
               className="vision-slide"
