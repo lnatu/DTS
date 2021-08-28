@@ -1,3 +1,7 @@
+import { useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+
 import { FullPage } from 'styles/layouts';
 import { Container, Flex } from 'styles/components/Layouts';
 import { Typo } from 'styles/components/Typo';
@@ -46,6 +50,44 @@ const View = () => {
       },
     ],
   ];
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.tech-stacks',
+        start: 'top bottom',
+        end: 'bottom top',
+      },
+    });
+
+    tl.from('.tech-stack', {
+      duration: 2,
+      scale: 0.8,
+      y: '100%',
+      opacity: 0,
+      ease: 'power4.out',
+      stagger: {
+        amount: 0.3,
+      },
+    });
+
+    const tl2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.tech-stacks',
+        start: 'top bottom',
+        end: 'bottom top',
+      },
+    });
+
+    tl2.from('.screen-title', {
+      duration: 2,
+      y: 200,
+      skewY: 20,
+      ease: 'power4.out',
+    });
+  }, []);
 
   return (
     <FullPage

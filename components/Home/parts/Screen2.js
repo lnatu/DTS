@@ -1,3 +1,7 @@
+import { useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.min.css';
 import 'swiper/components/pagination/pagination.min.css';
@@ -13,9 +17,34 @@ import classes from 'components/Home/styles/Home.module.css';
 import PageIdent from 'components/Home/components/PageIndent';
 
 const View = () => {
-  const nextTes = () => {
-    document.querySelector('.swiper-button-next').click();
-  };
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.test',
+        scrub: 1,
+        start: 'top bottom',
+        end: 'bottom top',
+      },
+    });
+
+    tl.to('.vision-slide', {
+      x: 400,
+      ease: 'power4.in',
+      duration: 1,
+    });
+
+    gsap.from('.vision-slide', {
+      scrollTrigger: {
+        trigger: '.test',
+      },
+      y: '150%',
+      ease: 'power4.out',
+      duration: 2,
+      delay: 0.5,
+    });
+  }, []);
 
   return (
     <FullPage className="screen">

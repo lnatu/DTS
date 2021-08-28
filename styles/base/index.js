@@ -379,6 +379,9 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   // GSAP
+  .overflow-x-hidden {
+    overflow-x: hidden;
+  }
   .overflow-hidden {
     overflow: hidden;
   }

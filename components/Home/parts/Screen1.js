@@ -1,11 +1,43 @@
+import { useEffect } from 'react';
 import Image from 'next/image';
+import { gsap } from 'gsap';
 import { FullPage } from 'styles/layouts';
-import { BlockText, Flex, Overlay, Stack } from 'styles/components/Layouts';
+import { BlockText, Flex, Overlay } from 'styles/components/Layouts';
 import { Button } from 'styles/components/Buttons';
 import { Typo } from 'styles/components/Typo';
 import PageIdent from 'components/Home/components/PageIndent';
 
 const View = () => {
+  useEffect(() => {
+    const tl = gsap.timeline();
+    const tl2 = gsap.timeline();
+
+    tl.from('.slide-up-fade', {
+      duration: 2,
+      scale: 0.9,
+      y: 100,
+      opacity: 0,
+      delay: 0.5,
+      ease: 'power4.out',
+      stagger: {
+        amount: 0.3,
+      },
+    });
+
+    tl2.from('.slide-up-skew', {
+      duration: 2,
+      delay: 1,
+      scale: 0.9,
+      y: 100,
+      skewY: 20,
+      opacity: 0,
+      ease: 'power4.out',
+      stagger: {
+        amount: 5,
+      },
+    });
+  }, []);
+
   return (
     <FullPage className="screen about-us">
       <Overlay>
