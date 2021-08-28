@@ -41,7 +41,7 @@ const View = () => {
             <span></span>
           </div>
 
-          <Nav menuActive={menuActive} />
+          <Nav menuActive={menuActive} setMenuActive={setMenuActive} />
         </Flex>
       </Header>
     </>

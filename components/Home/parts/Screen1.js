@@ -7,7 +7,7 @@ import PageIdent from 'components/Home/components/PageIndent';
 
 const View = () => {
   return (
-    <FullPage className="screen">
+    <FullPage className="screen about-us">
       <Overlay>
         <Flex
           items="center"

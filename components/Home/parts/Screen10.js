@@ -26,7 +26,7 @@ const View = () => {
   const imageWidth = 0;
 
   return (
-    <FullPage className="screen">
+    <FullPage className="screen staff">
       <Stack className={classes['team-next']} level={5}>
         <StyledImage
           src="/static/images/icons/triangle-right.svg"
@@ -314,7 +314,7 @@ const View = () => {
         </Box>
       </Flex>
 
-      <PageIdent order="10" text="Feedback" />
+      <PageIdent order="10" text="About us" />
     </FullPage>
   );
 };
